@@ -1,0 +1,215 @@
+
+D:\Software\open-ssl-certificate>keytool -list -v -keystore keystore.jks
+Enter keystore password:
+Keystore type: PKCS12
+Keystore provider: SUN
+
+Your keystore contains 1 entry
+
+Alias name: sravani-certificate
+Creation date: 25-Jun-2023
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Sravani, OU=Sravani-organization, O=sravani-main-orgainization, L=Hyderabad, ST=Telangana, C=IN
+Issuer: CN=Sravani, OU=Sravani-organization, O=sravani-main-orgainization, L=Hyderabad, ST=Telangana, C=IN
+Serial number: 1a267438c95b510a
+Valid from: Sun Jun 25 13:21:29 IST 2023 until: Wed Jun 19 13:21:29 IST 2024
+Certificate fingerprints:
+         SHA1: 2B:0F:85:C5:AD:C0:FA:06:FC:14:1F:EE:F6:B2:2F:8F:42:4D:65:F1
+         SHA256: AF:C1:84:FB:D6:DD:DF:BB:EE:62:33:2B:B3:42:1C:11:94:60:C3:5A:81:C9:02:C6:12:AA:25:12:27:AA:68:B2
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 27 7E 1B 20 2D DA 65 B5   73 DD CE 6F 62 DC 17 17  '.. -.e.s..ob...
+0010: 29 2B AF 7F                                        )+..
+]
+]
+
+
+
+*******************************************
+*******************************************
+
+
+
+D:\Software\open-ssl-certificate>dir
+ Volume in drive D is Data
+ Volume Serial Number is C8D5-AC7F
+
+ Directory of D:\Software\open-ssl-certificate
+
+25-06-2023  13:21    <DIR>          .
+25-06-2023  12:23    <DIR>          ..
+25-06-2023  12:24             1,024 .rnd
+25-06-2023  12:26             2,090 certificate.pem
+25-06-2023  12:26             3,272 key.pem
+25-06-2023  13:21             2,850 keystore.jks
+               4 File(s)          9,236 bytes
+               2 Dir(s)  922,266,963,968 bytes free
+
+D:\Software\open-ssl-certificate>keytool -exportcert -alias sravani-certificate -keystore keystore.jks -rfc -file first-key-pair-cert.pem
+Enter keystore password:
+Certificate stored in file <first-key-pair-cert.pem>
+
+D:\Software\open-ssl-certificate>dir
+ Volume in drive D is Data
+ Volume Serial Number is C8D5-AC7F
+
+ Directory of D:\Software\open-ssl-certificate
+
+25-06-2023  13:28    <DIR>          .
+25-06-2023  12:23    <DIR>          ..
+25-06-2023  12:24             1,024 .rnd
+25-06-2023  12:26             2,090 certificate.pem
+25-06-2023  13:28             1,376 first-key-pair-cert.pem
+25-06-2023  12:26             3,272 key.pem
+25-06-2023  13:21             2,850 keystore.jks
+               5 File(s)         10,612 bytes
+               2 Dir(s)  922,266,959,872 bytes free
+
+D:\Software\open-ssl-certificate>type first-key-pair-cert.pem
+-----BEGIN CERTIFICATE-----
+MIIDuzCCAqOgAwIBAgIIGiZ0OMlbUQowDQYJKoZIhvcNAQELBQAwgYsxCzAJBgNV
+BAYTAklOMRIwEAYDVQQIEwlUZWxhbmdhbmExEjAQBgNVBAcTCUh5ZGVyYWJhZDEj
+MCEGA1UEChMac3JhdmFuaS1tYWluLW9yZ2Fpbml6YXRpb24xHTAbBgNVBAsTFFNy
+YXZhbmktb3JnYW5pemF0aW9uMRAwDgYDVQQDEwdTcmF2YW5pMB4XDTIzMDYyNTA3
+NTEyOVoXDTI0MDYxOTA3NTEyOVowgYsxCzAJBgNVBAYTAklOMRIwEAYDVQQIEwlU
+ZWxhbmdhbmExEjAQBgNVBAcTCUh5ZGVyYWJhZDEjMCEGA1UEChMac3JhdmFuaS1t
+YWluLW9yZ2Fpbml6YXRpb24xHTAbBgNVBAsTFFNyYXZhbmktb3JnYW5pemF0aW9u
+MRAwDgYDVQQDEwdTcmF2YW5pMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAwzo71k4SU1Adfup/7zygBw7H9oslmixKOcWBwuHdBKxTGZeOKtYBNUrwyJFW
+UJ1ckE7cuN8NHNYbt2aSN9WFrItyhJVVOrXuvT0HLB4XqXcReWMUeAGNmYUhR2Vv
+ONoCMq14HOieCBCwuVtBy6XFXFroFkXY4ulULWUDOjl9GAk5Rg9qSjByOMIoEvbN
+zU+WxJlj8vuW2Swk7JMVyLrPJrkmahMxZFd4RvB+jL+7BLGe8K3xfdE5dSL6Vg9l
+HGwGGmqDB5uPxxA6WOzvwszKuKBGx+rT+T1oSIURf+d9l44/anRsJIOE4calRJyT
+ax9lZ2rDGqZYo0fDlty/5cKXpwIDAQABoyEwHzAdBgNVHQ4EFgQUJ34bIC3aZbVz
+3c5vYtwXFykrr38wDQYJKoZIhvcNAQELBQADggEBALBHoDKP7NLx6O0uOtu0AMVU
+kVbEbKWZgWHZmgkTa24rtTdnuV7Tk8fubARZC3h6joBzKpLhbbd5rT3oKSS5+VvZ
+pFe+E8k2CBuP46M5arpUuICOpGzi6MI9V8hQz+OlPKfJfo4FQbk5hQ2L9/LjxMJK
+ud25F9+avf92O6rjTpGq8ZdE9jOLsSzr2wdpM0mhioJjZcGgaBEu76PMaC0e6VPn
+bIJcBtNaT6JIVuEfgKVDgwEGz4E4NJ9sTM1SgZGrKN2Jex1z7Nn4bkvgdYO8UBWB
+UopGURi1Kp4bVxTGMBmIHGYEqby30bacb/fQoVbkp9yYHBwYZMIWI9SGT7rvAWI=
+-----END CERTIFICATE-----
+
+D:\Software\open-ssl-certificate>type certificate.pem
+-----BEGIN CERTIFICATE-----
+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
+GqhaVQkpXpJ6/VX7MQ==
+-----END CERTIFICATE-----
+
+D:\Software\open-ssl-certificate>type key.pem
+-----BEGIN PRIVATE KEY-----
+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
+IIr7yV8gD9U1eT6tnqTi9CHluPqvQkQ=
+-----END PRIVATE KEY-----
+
+D:\Software\open-ssl-certificate>docker-machine ip
+'docker-machine' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Software\open-ssl-certificate>docker-machine ip default
+'docker-machine' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Software\open-ssl-certificate>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+D:\Software\open-ssl-certificate>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+D:\Software\open-ssl-certificate>docker ps -a
+CONTAINER ID   IMAGE                                                     COMMAND                  CREATED              STATUS                          PORTS     NAMES
+7bd85a0874c9   my-fastapi-app                                            "uvicorn main:app --…"   About a minute ago   Exited (1) About a minute ago             dazzling_elbakyan
+fbf216d04c60   my-fastapi-app                                            "uvicorn main:app --…"   6 minutes ago        Exited (1) 6 minutes ago                  pensive_poitras
+ff6ee8a98fd8   abhijitjadhav1998/deefake-detection-20framemodel:latest   "/app/bin/gunicorn_s…"   7 weeks ago          Created                                   flamboyant_hodgkin
+1a5e24aa5037   abhijitjadhav1998/deepfake-nginx-proxyserver              "/docker-entrypoint.…"   7 weeks ago          Created                                   cranky_nobel
+24d82fbb5b31   abhijitjadhav1998/deepfake-nginx-proxyserver              "/docker-entrypoint.…"   7 weeks ago          Created                                   xenodochial_taussig
+7bafc605c7b4   abhijitjadhav1998/deepfake-nginx-proxyserver              "/docker-entrypoint.…"   7 weeks ago          Exited (0) 7 weeks ago                    interesting_murdock
+e6ce9958864c   hello-world                                               "/hello"                 7 weeks ago          Exited (0) 7 weeks ago                    xenodochial_nash
+
+D:\Software\open-ssl-certificate> 
